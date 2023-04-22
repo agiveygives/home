@@ -10,14 +10,16 @@ const propTypes = {
 
 const DesktopIcon = ({ icon, label, href, alt }) => {
   return (
-    <a href={href} className={styles.container}>
-      <img
-        src={icon}
-        alt={alt}
-        className={styles.icon}
-      />
-      <p>{label}</p>
-    </a>
+    <div>
+      <a href={href} className={styles.container}>
+        <img
+          src={icon}
+          alt={alt}
+          className={styles.icon}
+        />
+        <div>{label}</div>
+      </a>
+    </div>
   )
 };
 
