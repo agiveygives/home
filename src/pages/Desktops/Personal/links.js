@@ -3,8 +3,11 @@ import {
   chatgptIcon,
   firebaseIcon,
   githubIcon,
+  linkedinIcon,
   netlifyIcon,
+  redditIcon,
   vercelIcon,
+  youtubeIcon,
 } from '../../../assets/icons';
 
 const desktopLinks = [
@@ -43,6 +46,24 @@ const desktopLinks = [
     href: 'https://app.netlify.com/teams/agiveygives/overview',
     alt: 'Netlify logo',
     icon: netlifyIcon,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/',
+    alt: 'LinkedIn logo',
+    icon: linkedinIcon,
+  },
+  {
+    label: 'Reddit',
+    href: 'https://www.reddit.com/',
+    alt: 'Reddit logo',
+    icon: redditIcon,
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/',
+    alt: 'YouTube logo',
+    icon: youtubeIcon,
   },
 ];
 

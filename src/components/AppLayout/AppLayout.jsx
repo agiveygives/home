@@ -6,11 +6,12 @@ import {
   MenuList,
   MenuListItem,
   Separator,
-  TextInput,
   Toolbar
 } from 'react95';
 import styled from 'styled-components';
+import Search from '../Search';
 import logoIMG from '../../assets/logo.png';
+import { blogIcon, mailIcon } from '../../assets/icons';
 
 const Wrapper = styled.div`
   padding: 1rem;
@@ -55,16 +56,38 @@ const AppLayout = ({ children }) => {
                 onClick={() => setOpen(false)}
               >
                 <MenuListItem>
-                  <span role='img' aria-label='👨‍💻'>
-                    👨‍💻
-                  </span>
-                  Profile
+                  <a
+                    href="https://mail.google.com/"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                    }}
+                  >
+                    <img
+                      src={mailIcon}
+                      alt='Windows 95 mail icon'
+                      style={{ width: '20px' }}
+                    />
+                    <div>Email</div>
+                  </a>
                 </MenuListItem>
                 <MenuListItem>
-                  <span role='img' aria-label='📁'>
-                    📁
-                  </span>
-                  My account
+                  <a
+                    href="https://andrewgivens.net/blog"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                    }}
+                  >
+                    <img
+                      src={blogIcon}
+                      alt='Windows 95 computer icon'
+                      style={{ width: '20px' }}
+                    />
+                    <div>Blog</div>
+                  </a>
                 </MenuListItem>
                 <Separator />
                 <MenuListItem disabled>
@@ -77,7 +100,7 @@ const AppLayout = ({ children }) => {
             )}
           </div>
 
-          <TextInput placeholder='Search...' width={150} />
+          <Search />
         </Toolbar>
       </AppBar>
     </>

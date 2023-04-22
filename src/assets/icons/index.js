@@ -1,7 +1,13 @@
 export { default as awsIcon } from './aws.png';
+export { default as blogIcon } from './blog.png';
 export { default as chatgptIcon } from './chatgpt.png';
 export { default as firebaseIcon } from './firebase.png';
 export { default as githubIcon } from './github.png';
+export { default as googleIcon } from './google.png';
+export { default as linkedinIcon } from './linkedin.png';
+export { default as mailIcon } from './mail.png';
 export { default as netlifyIcon } from './netlify.svg';
+export { default as redditIcon } from './reddit.png';
 export { default as vercelIcon } from './vercel.png';
+export { default as youtubeIcon } from './youtube.png';
 
