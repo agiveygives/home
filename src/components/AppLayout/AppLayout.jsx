@@ -13,7 +13,7 @@ import styled from 'styled-components';
 import logoIMG from '../../assets/logo.png';
 
 const Wrapper = styled.div`
-  padding: 5rem;
+  padding: 1rem;
   background: ${({ theme }) => theme.desktopBackground};
   flex: 1;
 `;
@@ -50,7 +50,7 @@ const AppLayout = ({ children }) => {
                 style={{
                   position: 'absolute',
                   left: '0',
-                  top: '100%'
+                  bottom: '100%'
                 }}
                 onClick={() => setOpen(false)}
               >
