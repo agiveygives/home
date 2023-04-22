@@ -1,5 +1,8 @@
 .desktopContainer {
   display: flex;
   flex-direction: column;
+  align-content: flex-start;
   gap: 15px;
+  flex-wrap: wrap;
+  max-height: 90vh;
 }
