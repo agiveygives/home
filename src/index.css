@@ -14,14 +14,16 @@
   -webkit-text-size-adjust: 100%;
 }
 
-html, body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+html {
+  height: 100%;
 }
 
-#root {
+html, body {
+  display: flex;
+  flex-direction: column;
+}
+
+body, #root {
   flex: 1;
 }
 
