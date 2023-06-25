@@ -1,3 +1,4 @@
+export { default as applicationWizardIcon } from './application-wizard.png';
 export { default as awsIcon } from './aws.png';
 export { default as blogIcon } from './blog.png';
 export { default as chatgptIcon } from './chatgpt.png';

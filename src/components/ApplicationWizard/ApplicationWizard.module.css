@@ -1,0 +1,16 @@
+.container {
+  position: absolute !important;
+  z-index: 2000;
+  width: 75vw;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.windowTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

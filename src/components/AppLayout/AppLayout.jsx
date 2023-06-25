@@ -9,9 +9,10 @@ import {
   Toolbar
 } from 'react95';
 import styled from 'styled-components';
+import ApplicationWizard from '../ApplicationWizard';
 import Search from '../Search';
 import logoIMG from '../../assets/logo.png';
-import { blogIcon, mailIcon } from '../../assets/icons';
+import { applicationWizardIcon, blogIcon, mailIcon } from '../../assets/icons';
 
 const Wrapper = styled.div`
   padding: 1rem;
@@ -25,9 +26,14 @@ const propTypes = {
 
 const AppLayout = ({ children }) => {
   const [open, setOpen] = useState(false);
+  const [applicationWizardOpen, setApplicationWizardOpen] = useState(false);
 
   return (
     <>
+      <ApplicationWizard
+        isOpen={applicationWizardOpen}
+        closeWindow={() => setApplicationWizardOpen(false)}
+      />
       <Wrapper>
         {children}
       </Wrapper>
@@ -90,11 +96,23 @@ const AppLayout = ({ children }) => {
                   </a>
                 </MenuListItem>
                 <Separator />
-                <MenuListItem disabled>
-                  <span role='img' aria-label='🔙'>
-                    🔙
+                <MenuListItem>
+                  <span
+                    aria-label='Application Wizard'
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                    }}
+                    onClick={() => setApplicationWizardOpen(true)}
+                  >
+                    <img
+                      src={applicationWizardIcon}
+                      alt='Windows 95 computer icon'
+                      style={{ width: '20px' }}
+                    />
+                    <div>Application Wizard</div>
                   </span>
-                  Logout
                 </MenuListItem>
               </MenuList>
             )}
