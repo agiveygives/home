@@ -11,4 +11,4 @@ export { default as netlifyIcon } from './netlify.svg';
 export { default as redditIcon } from './reddit.png';
 export { default as vercelIcon } from './vercel.png';
 export { default as youtubeIcon } from './youtube.png';
-
+export { default as dndPlayersHandbookIcon } from './dungeons-and-dragons-players-handbook.png';

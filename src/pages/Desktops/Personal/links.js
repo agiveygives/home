@@ -8,6 +8,7 @@ import {
   redditIcon,
   vercelIcon,
   youtubeIcon,
+  dndPlayersHandbookIcon,
 } from '../../../assets/icons';
 
 const desktopLinks = [
@@ -65,6 +66,12 @@ const desktopLinks = [
     alt: 'YouTube logo',
     icon: youtubeIcon,
   },
+  {
+    label: 'Player\'s Handbook',
+    href: 'https://online.anyflip.com/tbzfg/nfcs/mobile/index.html',
+    alt: 'Dungeons and Dragons Player\'s Handbook cover',
+    icon: dndPlayersHandbookIcon,
+  }
 ];
 
 export default desktopLinks;
