@@ -11,7 +11,7 @@ const propTypes = {
 const DesktopIcon = ({ icon, label, href, alt }) => {
   return (
     <div>
-      <a href={href} className={styles.container}>
+      <a href={href} className={styles.container} target="_blank" rel="noreferrer">
         <img
           src={icon}
           alt={alt}
