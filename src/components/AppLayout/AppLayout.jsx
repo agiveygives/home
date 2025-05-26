@@ -10,6 +10,7 @@ import {
 } from 'react95';
 import styled from 'styled-components';
 import ApplicationWizard from '../ApplicationWizard';
+import GameLauncher from '../GameLauncher/GameLauncher';
 import Search from '../Search';
 import logoIMG from '../../assets/logo.png';
 import { applicationWizardIcon, blogIcon, mailIcon } from '../../assets/icons';
@@ -27,12 +28,17 @@ const propTypes = {
 const AppLayout = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [applicationWizardOpen, setApplicationWizardOpen] = useState(false);
+  const [gameLauncherOpen, setGameLauncherOpen] = useState(false);
 
   return (
     <>
       <ApplicationWizard
         isOpen={applicationWizardOpen}
         closeWindow={() => setApplicationWizardOpen(false)}
+      />
+      <GameLauncher
+        isOpen={gameLauncherOpen}
+        closeWindow={() => setGameLauncherOpen(false)}
       />
       <Wrapper>
         {children}
@@ -112,6 +118,24 @@ const AppLayout = ({ children }) => {
                       style={{ width: '20px' }}
                     />
                     <div>Application Wizard</div>
+                  </span>
+                </MenuListItem>
+                <MenuListItem>
+                  <span
+                    aria-label='Games'
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                    }}
+                    onClick={() => setGameLauncherOpen(true)}
+                  >
+                    <img
+                      src={applicationWizardIcon}
+                      alt='Windows 95 computer icon'
+                      style={{ width: '20px' }}
+                    />
+                    <div>Games</div>
                   </span>
                 </MenuListItem>
               </MenuList>
