@@ -59,7 +59,7 @@ const GameLaunch = ({ isOpen, closeWindow }) => {
       </WindowHeader>
       <WindowContent>
         <div>
-          <FlashPlayer src="/games/papas_cheeseria/papascheeseria_102.swf" height={500} width={800} />
+          <FlashPlayer src="/games/papas_cheeseria/papascheeseria_102.swf" />
         </div>
       </WindowContent>
     </Window>

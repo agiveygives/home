@@ -1,10 +1,40 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import styles from './FlashPlayer.module.css';
+import { Button } from 'react95';
 
-function FlashPlayer({ src, width = 800, height = 600 }) {
+function FlashPlayer({ src }) {
   const containerRef = useRef(null);
   const playerRef = useRef(null);
+  const [fullscreen, setFullscreen] = useState(false);
   const [loaded, setLoaded] = useState(false);
+
+  const handleFullscreenChange = useCallback(() => {
+    const isFullscreen =
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.mozFullScreenElement ||
+      document.msFullscreenElement;
+
+    setFullscreen(isFullscreen);
+  }, []);
+
+  useEffect(() => {
+    // Add listeners for all fullscreen change event variants
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+    return () => {
+      // Clean up
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('mozfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
+    };
+  }, [handleFullscreenChange]);
 
   useEffect(() => {
     if (loaded) return;
@@ -26,6 +56,9 @@ function FlashPlayer({ src, width = 800, height = 600 }) {
 
   const enterFullscreen = () => {
     const container = containerRef.current;
+
+    setFullscreen(true);
+
     if (container.requestFullscreen) {
       container.requestFullscreen();
     } else if (container.webkitRequestFullscreen) {
@@ -37,38 +70,44 @@ function FlashPlayer({ src, width = 800, height = 600 }) {
     }
   };
 
+  const exitFullscreen = () => {
+    const container = containerRef.current;
+
+    setFullscreen(false);
+
+    if (container.exitFullscreen) {
+      container.exitFullscreen();
+    } else if (container.webkitExitFullscreen) {
+      container.webkitExitFullscreen();
+    } else if (container.mozExitFullScreen) {
+      container.mozExitFullScreen();
+    } else if (container.msExitFullscreen) {
+      container.msExitFullscreen();
+    }
+  };
+
   return (
-    <div style={{ position: 'relative', width, height }}>
-      <div
-        ref={containerRef}
-        style={{
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'black',
-        }}
-      />
-      <button
-        onClick={enterFullscreen}
-        style={{
-          position: 'absolute',
-          bottom: 10,
-          right: 10,
-          zIndex: 10,
-          padding: '8px 12px',
-          fontSize: '14px',
-          cursor: 'pointer',
-        }}
-      >
-        Fullscreen
-      </button>
+    <div className={classNames(styles.container, { [styles.fullscreen]: fullscreen })}>
+      <div ref={containerRef} className={classNames(styles.playerContainer)} />
+      <div className={classNames(styles.playerControls, { [styles.hidden]: fullscreen })}>
+        <Button onClick={enterFullscreen} className={styles.fullscreenBtn}>
+          Fullscreen
+        </Button>
+      </div>
+        <Button
+          className={classNames(styles.exitFullscreenBtn, { [styles.hidden]: !fullscreen })}
+          onClick={exitFullscreen}
+        >
+          X
+        </Button>
     </div>
   );
 }
 
 FlashPlayer.propTypes = {
   src: PropTypes.string.isRequired,
-  width: PropTypes.number,
-  height: PropTypes.number,
+  width: PropTypes.string,
+  height: PropTypes.string,
 };
 
 export default FlashPlayer;
