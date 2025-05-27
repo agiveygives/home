@@ -13,7 +13,7 @@ import ApplicationWizard from '../ApplicationWizard';
 import GameLauncher from '../GameLauncher/GameLauncher';
 import Search from '../Search';
 import logoIMG from '../../assets/logo.png';
-import { applicationWizardIcon, blogIcon, mailIcon } from '../../assets/icons';
+import { applicationWizardIcon, blogIcon, mailIcon, programsFolderIcon } from '../../assets/icons';
 
 const Wrapper = styled.div`
   padding: 1rem;
@@ -131,7 +131,7 @@ const AppLayout = ({ children }) => {
                     onClick={() => setGameLauncherOpen(true)}
                   >
                     <img
-                      src={applicationWizardIcon}
+                      src={programsFolderIcon}
                       alt='Windows 95 computer icon'
                       style={{ width: '20px' }}
                     />
