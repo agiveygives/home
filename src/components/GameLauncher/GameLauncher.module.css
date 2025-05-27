@@ -4,7 +4,7 @@
   width: 75vw;
 }
 
-@media screen and ((max-width: 768px) or (orientation: landscape)) {
+@media screen and (max-width: 768px) {
   .container {
     width: 100vw;
     height: 100vh;
