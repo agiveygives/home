@@ -9,6 +9,7 @@ export { default as linkedinIcon } from './linkedin.png';
 export { default as mailIcon } from './mail.png';
 export { default as netlifyIcon } from './netlify.svg';
 export { default as redditIcon } from './reddit.png';
+export { default as supabaseIcon } from './supabase-logo-icon.png';
 export { default as vercelIcon } from './vercel.png';
 export { default as youtubeIcon } from './youtube.png';
 export { default as dndPlayersHandbookIcon } from './dungeons-and-dragons-players-handbook.png';

@@ -6,6 +6,7 @@ import {
   linkedinIcon,
   netlifyIcon,
   redditIcon,
+  supabaseIcon,
   vercelIcon,
   youtubeIcon,
   dndPlayersHandbookIcon,
@@ -23,6 +24,12 @@ const desktopLinks = [
     href: 'https://chat.openai.com/',
     alt: 'Open AI Chat GPT',
     icon: chatgptIcon,
+  },
+  {
+    label: 'Supabase',
+    href: 'https://supabase.com/dashboard/org/yahuxwrmlhndplkgsfkr',
+    alt: 'Supabase',
+    icon: supabaseIcon,
   },
   {
     label: 'Firebase',
