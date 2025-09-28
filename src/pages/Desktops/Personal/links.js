@@ -1,6 +1,7 @@
 import {
   awsIcon,
   chatgptIcon,
+  digitalOceanIcon,
   firebaseIcon,
   githubIcon,
   linkedinIcon,
@@ -30,6 +31,12 @@ const desktopLinks = [
     href: 'https://supabase.com/dashboard/org/yahuxwrmlhndplkgsfkr',
     alt: 'Supabase',
     icon: supabaseIcon,
+  },
+  {
+    label: 'Digital Ocean',
+    href: 'https://cloud.digitalocean.com/projects',
+    alt: 'Digital Ocean',
+    icon: digitalOceanIcon,
   },
   {
     label: 'Firebase',

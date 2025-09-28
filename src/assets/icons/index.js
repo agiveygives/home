@@ -2,6 +2,7 @@ export { default as applicationWizardIcon } from './application-wizard.png';
 export { default as awsIcon } from './aws.png';
 export { default as blogIcon } from './blog.png';
 export { default as chatgptIcon } from './chatgpt.png';
+export { default as digitalOceanIcon } from './DigitalOcean_icon.svg';
 export { default as firebaseIcon } from './firebase.png';
 export { default as githubIcon } from './github.png';
 export { default as googleIcon } from './google.png';
